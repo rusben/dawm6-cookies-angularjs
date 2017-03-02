@@ -37,5 +37,21 @@
 			$scope.dateToValidate.opened = true;
 		};
 
+    this.createCookie = function() {
+
+      // Get the number of cookies untill now
+      var nCookies = $cookies.get($scope.generalName, { path : $scope.path });
+
+      // If this is the first cookie just initialize to 0
+      if (isNaN(nCookies)) nCookies = 0;
+
+      // We save the object with the generalName plus the number of cookies until now
+      $cookies.putObject( $scope.generalName + nCookies, $scope.product, { path : $scope.path });
+
+      // We save each product
+      $cookies.put($scope.generalName, parseInt(nCookies) + 1, { path : $scope.path });
+
+    };
+
 	}]);
 })();

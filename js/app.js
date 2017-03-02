@@ -8,7 +8,7 @@ $(document).ready(function () {
 // https://docs.angularjs.org/api/ng/directive/ngApp
 
 (function(){
-  var cookiesApp = angular.module('cookiesApp', ['ng-currency', 'ui.bootstrap']);
+  var cookiesApp = angular.module('cookiesApp', ['ng-currency', 'ui.bootstrap', 'ngCookies']);
 
-  
+
 })();
