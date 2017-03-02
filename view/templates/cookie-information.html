@@ -22,8 +22,8 @@
 </div>
 <table>
 <tr><th>First Field</th><th>Second Field</th><th>Date</th><th>Option</th><th>Select</th><th>Checkbox 1</th><th>Checkbox 2</th><th>Modify</th><th>Remove</th></tr>
-<tr dir-paginate="productObj in filteredData | itemsPerPage: pageSize" current-page="currentPage">
-<!--<tr ng-repeat="productObj in productsArray">-->
+<!-- <tr dir-paginate="productObj in filteredData | itemsPerPage: pageSize" current-page="currentPage"> -->
+<tr ng-repeat="productObj in productsArray">
 	<td>
 		<label ng-show="editInput[$index]">{{productObj.getCookieFiled1()}}</label>
 		<label ng-show="!editInput[$index]"><input type="text" ng-model="productObj.cookieFiled1"/></label>
