@@ -39,33 +39,34 @@
   <script src="js/controller/productController.js" type="text/javascript" xml:space="preserve"></script>
 </head>
 <body ng-controller="productController as productCtrl" ng-init="productCtrl.removeCookies(true)">
-  <div id="contentDiv" class="container well">
-    <div class="form-group">
-      <a href="#" ng-click="productCtrl.showCookies()"><img src="images/shoppingCart.jpg" width="60px" height="60px" /><b>Show all cookies</b></a>
-      <span>  --  </span>
-      <a href="#" ng-click="productCtrl.deleteCookies()"><b>Empty cookies</b></a>
-    </div>
-    <form name="formExample" ng-submit="formExample.$valid && productCtrl.createCookie()" novalidate>
-      <div class="row">
-        <div class="col-xs-12"><h2>Cookies managment</h2></div>
-      </div>
-      <div class="form-horizontal" >
+  <div class="container well">
+
+    <div class="row">
+      <div class="col-md-12">
+      <img class="img-circle" src="images/shoppingCart.jpg" width="60px" height="60px" />
+      <ul class="nav nav-pills pull-right">
+        <li role="presentation"><a href="#" ng-click="productCtrl.showCookies()"><b>Show all cookies</b></a></li>
+        <li role="presentation"><a href="#" ng-click="productCtrl.deleteCookies()"><b>Empty cookies</b></a></li>
+      </ul>
+
+    <h1>Cookies managment</h1>
+
+    <form class="form-horizontal" name="formExample" ng-submit="formExample.$valid && productCtrl.createCookie()" novalidate>
         <div class="form-group">
-          <label class="col-xs-4 text-left" for="formGroup">Write here the value of the first field to save in the product:</label>
-          <div class="col-xs-5">
+          <label class="control-label col-md-5" for="formGroup">Write here the value of the first field to save in the product:</label>
+          <div class="col-md-7">
             <input type="text" id="cookieFiled1" class="form-control" ng-model="product.cookieFiled1" required />
           </div>
         </div>
         <div class="form-group">
-          <label class="col-xs-4 text-left" for="formGroup">Write here the value of the second field to save in the product:</label>
-          <div class="col-xs-5">
+          <label class="control-label col-md-5" for="formGroup">Write here the value of the second field to save in the product:</label>
+          <div class="col-md-7">
             <input type="text" id="cookieFiled2" ng-currency class="form-control" ng-model="product.cookieFiled2" required />
           </div>
         </div>
         <div class="form-group">
-          <label class="col-xs-4 text-left" for="formGroup">Write here a date:</label>
-          <div class="col-sm-6">
-            <p class="input-group">
+          <label class="control-label col-md-5" for="formGroup">Write here a date:</label>
+          <div  class="input-group col-md-7">
               <input type="text" class="form-control" id="betDate" uib-datepicker-popup="{{format}}"
               ng-model="product.dateToValidate"
               is-open="dateToValidate.opened"
@@ -76,39 +77,32 @@
               <span class="input-group-btn">
                 <button type="button" class="btn btn-default" ng-click="openDateToValidate()"><i class="glyphicon glyphicon-calendar"></i></button>
               </span>
-            </p>
           </div>
         </div>
         <div class="form-group">
-          <label class="col-xs-4 text-left" for="formGroup">Select:</label>
-          <div class="col-xs-8">
-            <select id="selectForm" class="form-control" ng-model="product.selectForm" ng-options="options for options in ['option1','option2']" required ></select>
+          <label class="control-label col-md-5" for="formGroup">Select:</label>
+          <div class="col-md-7">
+            <select class="form-control" ng-model="product.selectForm" ng-options="options for options in ['option1','option2']" required ></select>
           </div>
         </div>
         <div class="form-group">
-          <label class="col-xs-4 text-left" for="formGroup">Write here the option:</label>
-          <div class="col-xs-8">
+          <label class="control-label col-md-5" for="formGroup">Write here the option:</label>
+          <div class="col-md-7">
             <input type="radio" name="radioType" id="radioType" ng-model="product.radioType" value="Option 1"   /> Option 1
             <input type="radio" name="radioType"  id="radioType1"   ng-model="product.radioType" value="Option 2" /> Option 2
           </div>
         </div>
         <div class="form-group">
-          <label class="col-xs-4 text-left" for="formGroup">Checkbox:</label>
-          <div class="col-xs-8">
+          <label class="control-label col-md-5" for="formGroup">Checkbox:</label>
+          <div class="col-md-7">
             <input type="checkbox" name="checkboxType" id="checkboxType1" value="checkBox 1" ng-model="product.checkboxType1" /> Checkbox 1
             <input type="checkbox" name="checkboxType" id="checkboxType2" value="checkBox 2" ng-model="product.checkboxType2" /> Checkbox 2
           </div>
         </div>
-        <div class="form-group">
-          <label class="col-sm-4 control-label" for="formGroup"></label>
-          <div class="col-sm-6">
-            <button class="btn btn-success">
-              Create product
-            </button>
-          </div>
-        </div>
-      </div>
+        <button class="btn btn-success pull-right "> Create product </button>
     </form>
+  </div>
+  </div>
   </div>
 </body>
 </html>
