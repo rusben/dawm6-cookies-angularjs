@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html ng-app="cookiesApp" xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+  <meta charset="utf-8">
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+  Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Cookies Inormation</title>
+  <link rel="shortcut icon" HREF="images/logo.jpg"/>
+  <meta name="description" content="Supermarket Eat it up">
+  <meta name="author" content="Robert Plana">
+
+  <!-- css-->
+  <link rel="shortcut icon" HREF="images/hotel.jpg"/>
+  <link rel="stylesheet" type="text/css" href="../../vendors/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+
+  <!-- jQuery-->
+  <script src="../../vendors/jquery/js/jQuery.js" type="text/javascript" xml:space="preserve"></script>
+
+  <!-- jQuery Cookies management-->
+  <script src="../../vendors/jquery/jquery-cookie/jquery.cookie.js" type="text/javascript" xml:space="preserve"></script>
+
+  <!-- Angular-->
+  <script src="../../vendors/angular/js/angular.min.js" type="text/javascript" xml:space="preserve"></script>
+  <script src="../../vendors/angular/js/angular-file-upload.js" type="text/javascript" xml:space="preserve"></script>
+  <script src="../../vendors/angular/js/angular-i18n/angular-locale_es-es.js" type="text/javascript" xml:space="preserve"></script>
+  <script src="../../vendors/angular/js/ng-currency.js" type="text/javascript" xml:space="preserve"></script>
+  <script src="../../vendors/angular/js/angular-cookies.js" type="text/javascript" xml:space="preserve"></script>
+  <script src="../../vendors/bootstrap/js/ui-bootstrap-tpls-2.3.1.js" type="text/javascript" xml:space="preserve"></script>
+  <script src="../../vendors/angular/js/dirPagination.js" type="text/javascript" xml:space="preserve"></script>
+
+  <!-- Own code-->
+  <!-- Model-->
+  <script src="../../js/model/productObj.js" type="text/javascript" xml:space="preserve"></script>
+
+  <!-- Controllers-->
+  <script src="../../js/app.js" type="text/javascript" xml:space="preserve"></script>
+  <script src="../../js/controller/generalFunctions.js" type="text/javascript" xml:space="preserve"></script>
+  <script src="../../js/controller/showProductsController.js" type="text/javascript" xml:space="preserve"></script>
+</head>
+<body ng-controller="showProductsController as showProductsCtrl" ng-init="showProductsCtrl.loadCookies()">
+  <cookie-information></cookie-information>
+</body>
+</html>

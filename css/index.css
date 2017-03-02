@@ -1,0 +1,11 @@
+.ng-invalid.ng-dirty{
+	border-color:#FF5B60;
+}
+.ng-valid.ng-dirty{
+	border-color:#69F174;
+}
+
+td{
+	padding-right: 30px;
+	padding-bottom:10px;
+}
