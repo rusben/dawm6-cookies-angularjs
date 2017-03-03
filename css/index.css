@@ -5,7 +5,9 @@
 	border-color:#69F174;
 }
 
-td{
-	padding-right: 30px;
-	padding-bottom:10px;
+.products-table td {
+padding-right: 30px;
+padding-bottom:10px;
 }
+
+.image-logo { width: 60px; height: 60px; }

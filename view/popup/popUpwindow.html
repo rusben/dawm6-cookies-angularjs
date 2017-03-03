@@ -7,7 +7,7 @@
   Remove this if you use the .htaccess -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Cookies Inormation</title>
-  <link rel="shortcut icon" HREF="images/logo.jpg"/>
+  <link rel="shortcut icon" href="images/logo.jpg"/>
   <meta name="description" content="Supermarket Eat it up">
   <meta name="author" content="Robert Plana">
 
@@ -41,6 +41,11 @@
   <script src="../../js/controller/showProductsController.js" type="text/javascript" xml:space="preserve"></script>
 </head>
 <body ng-controller="showProductsController as showProductsCtrl" ng-init="showProductsCtrl.loadCookies()">
-  <cookie-information></cookie-information>
+  <div class="container">
+    
+            <cookie-information></cookie-information>
+        </div>
+    </div>
+</div>
 </body>
 </html>

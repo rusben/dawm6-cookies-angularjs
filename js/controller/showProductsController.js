@@ -34,8 +34,19 @@
               //console.log(product);
           }
       });
-
     };
+
+    this.modifyCookie = function (index){
+        if($scope.editInput[index]) {
+          $scope.editInput[index]=false;
+          // modify the cookie
+          $cookies.putObject($scope.generalName + index,
+            $scope.productsArray[index], {path : $scope.path});
+        }
+        else {
+          $scope.editInput[index]=true;
+        }
+    }
 
 	}]);
 
