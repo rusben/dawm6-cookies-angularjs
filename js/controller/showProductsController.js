@@ -19,6 +19,24 @@
 		$scope.domain;
 		$scope.expires;
 		$scope.secure;
+
+    // Load the cookies into objects
+    this.loadCookies = function () {
+      var cookies = $cookies.getAll();
+      angular.forEach(cookies, function (value, key) {
+          // Check the cookie is not the global one
+          if (key != $scope.generalName) {
+              var product = new productObj();
+              // As the cookie cames as an string we convert it to object
+              product.cookieToObj(JSON.parse(value));
+              $scope.productsArray.push(product);
+              $scope.editInput.push(false);
+              //console.log(product);
+          }
+      });
+
+    };
+
 	}]);
 
 	angular.module("cookiesApp").directive("cookieInformation", function (){

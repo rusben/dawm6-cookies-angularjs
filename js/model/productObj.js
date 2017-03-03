@@ -94,7 +94,7 @@ function productObj ()
 			this.setCookieFiled1(productObj.cookieFiled1);
 		}
 		catch(err) {
-
+      
 		}
 
 		try {
@@ -136,7 +136,7 @@ function productObj ()
 			this.setCheckboxType2(productObj.checkboxType2);
 		}
 		catch(err) {
-
+      // TODO
 		}
 	}
 }

@@ -25,8 +25,8 @@
 <!-- <tr dir-paginate="productObj in filteredData | itemsPerPage: pageSize" current-page="currentPage"> -->
 <tr ng-repeat="productObj in productsArray">
 	<td>
-		<label ng-show="editInput[$index]">{{productObj.getCookieFiled1()}}</label>
-		<label ng-show="!editInput[$index]"><input type="text" ng-model="productObj.cookieFiled1"/></label>
+		<label ng-show="!editInput[$index]">{{productObj.getCookieFiled1()}}</label>
+		<label ng-show="editInput[$index]"><input type="text" ng-model="productObj.cookieFiled1"/></label>
 	</td>
 	<td>{{productObj.getCookieFiled2() | currency}}</td>
 	<td>{{productObj.getDateToValidate() | date}}</td>

@@ -69,5 +69,14 @@
       });
     };
 
+    this.showCookies = function () {
+      //var nCookies = $cookies.getAll();
+      var nCookies = $cookies.get($scope.generalName, { path : $scope.path });
+      // If this is the first cookie just initialize to 0
+      if (!isNaN(nCookies)) $window.open("view/popup/popUpwindow.html");
+
+    };
+
+
 	}]);
 })();
