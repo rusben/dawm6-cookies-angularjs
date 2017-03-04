@@ -1,42 +1,42 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html ng-app="cookiesApp" xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<!DOCTYPE html>
+<html lang="en" ng-app="cookiesApp">
+
 <head>
-  <meta charset="utf-8">
-  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
-  Remove this if you use the .htaccess -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
   <title>Cookies Management</title>
   <link rel="shortcut icon" HREF="images/logo.jpeg"/>
-  <meta name="description" content="Supermarket Eat it up">
-  <meta name="author" content="Robert Plana">
+  <meta name="description" content="DAWM6 Cookies AngularJS is an scholar project to introduce AngularJS Framework.">
 
   <!-- css-->
-  <link rel="stylesheet" type="text/css" href="vendors/bootstrap/css/bootstrap.min.css" />
-  <link rel="stylesheet" type="text/css" href="css/index.css" />
+  <link rel="stylesheet" type="text/css" href="vendors/bootstrap/css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="css/index.css"/>
   <!-- jQuery-->
-  <script src="vendors/jquery/js/jQuery.js" type="text/javascript" xml:space="preserve"></script>
+  <!-- <script src="vendors/jquery/js/jQuery.js" type="text/javascript"></script> -->
 
   <!-- jQuery Cookies management-->
-  <!-- <script src="vendors/jquery/jquery-cookie/jquery.cookie.js" type="text/javascript" xml:space="preserve"></script>-->
+  <!-- <script src="vendors/jquery/jquery-cookie/jquery.cookie.js" type="text/javascript"></script>-->
 
   <!-- Angular-->
-  <script src="vendors/angular/js/angular.min.js" type="text/javascript" xml:space="preserve"></script>
-  <script src="vendors/angular/js/angular-file-upload.js" type="text/javascript" xml:space="preserve"></script>
-  <script src="vendors/angular/js/angular-i18n/angular-locale_es-es.js" type="text/javascript" xml:space="preserve"></script>
-  <script src="vendors/angular/js/ng-currency.js" type="text/javascript" xml:space="preserve"></script>
-  <script src="vendors/angular/js/angular-cookies.js" type="text/javascript" xml:space="preserve"></script>
-  <script src="vendors/bootstrap/js/ui-bootstrap-tpls-2.3.1.js" type="text/javascript" xml:space="preserve"></script>
-  <script src="vendors/angular/js/dirPagination.js" type="text/javascript" xml:space="preserve"></script>
+  <script src="vendors/angular/js/angular.min.js" type="text/javascript" ></script>
+  <!-- <script src="vendors/angular/js/angular-file-upload.js" type="text/javascript"></script> -->
+  <!-- <script src="vendors/angular/js/angular-i18n/angular-locale_es-es.js" type="text/javascript" ></script> -->
+  <script src="vendors/angular/js/ng-currency.js" type="text/javascript"></script>
+  <script src="vendors/angular/js/angular-cookies.js" type="text/javascript"></script>
+  <script src="vendors/bootstrap/js/ui-bootstrap-tpls-2.3.1.js" type="text/javascript"></script>
+  <!-- <script src="vendors/angular/js/dirPagination.js" type="text/javascript" ></script> -->
 
   <!-- Own code-->
   <!-- Model-->
-  <script src="js/model/productObj.js" type="text/javascript" xml:space="preserve"></script>
+  <script src="js/model/productObj.js" type="text/javascript"></script>
 
   <!-- Controllers-->
-  <script src="js/app.js" type="text/javascript" xml:space="preserve"></script>
-  <!-- <script src="js/controller/generalFunctions.js" type="text/javascript" xml:space="preserve"></script> -->
-  <script src="js/controller/productController.js" type="text/javascript" xml:space="preserve"></script>
+  <script src="js/app.js" type="text/javascript"></script>
+  <!-- <script src="js/controller/generalFunctions.js" type="text/javascript"></script> -->
+  <script src="js/controller/productController.js" type="text/javascript" ></script>
 </head>
 <body ng-controller="productController as productCtrl" ng-init="productCtrl.removeCookies(true)">
   <div class="container well">

@@ -1,18 +1,21 @@
-/* @dateToValidate:
+/* 
+* @productObj:
 * @author:
 * @date:
 * @description:
 * @Attributes:
-* 		cookieFiled1: cookieFiled1entification of food in stock
-* 		.
-* 		.
-*		.
+* 	cookieFiled1:
+* 	cookieFiled1;
+*   cookieFiled2;
+*   dateToValidate;
+*   radioType;
+*   selectForm;
+*   checkboxType1;
+*   checkboxType2;
+* 
 * @methods:
 * 		construct
-* 		set's and get's foor each attribute
-*
-*
-*
+* 		setters and getters for each attribute
 *
 */
 function productObj ()
@@ -57,11 +60,14 @@ function productObj ()
 
   this.arrayToString = function (arrayCookieObj)
   {
-    var cookieString ="";
-    $.each(arrayCookieObj, function (index, film){
-      cookieString+="film number "+(index+1)+":"+film.toString()+"\n";
-    });
-    return cookieString;
+    return  JSON.stringify(arrayCookieObj);;
+
+    // Alternatively use toString on each cookie
+    /* var str ="";
+    for (var i = 0; i <= arrayCookieObj.legth; i++) {
+      str = arrayCookieObj[i].toString();
+    }
+    return str; */
 
   }
 
@@ -69,74 +75,35 @@ function productObj ()
   {
     var cookieString ="cookieFiled1="+this.getCookieFiled1()+":cookieFiled2="+this.getCookieFiled2()+":dateToValidate="+this.getDateToValidate()+":radioType="+this.getRadioType();
     cookieString +=":selectForm="+this.getSelectForm()+":checkboxType1="+this.getCheckboxType1()+":checkboxType2="+this.getCheckboxType2();
+    return cookieString;
+  }
+
+  this.toString = function () {
+    return JSON.stringify(this);
+  }
+
+  this.cookieToObj = function (productObj)
+  {
+    if(productObj.hasOwnProperty("cookieFiled1")) 
+      this.setCookieFiled1(productObj.cookieFiled1);
     
-    return cookieString;
-  }
+    if(productObj.hasOwnProperty("cookieFiled2")) 
+      this.setCookieFiled2(productObj.cookieFiled2);
 
-  this.toString = function ()
-  {
-    var cookieString ="cookieFiled1="+this.getCookieFiled1()+" dateToValidate="+this.getDateToValidate()+" cookieFiled2="+this.getCookieFiled2()+" radioType="+this.getRadioType();
-    cookieString +=" selectForm="+this.getSelectForm()+" checkboxType1="+this.getCheckboxType1()+" checkboxType2="+this.getCheckboxType2();
+    if(productObj.hasOwnProperty("dateToValidate")) 
+      this.setDateToValidate(productObj.dateToValidate);
 
-    return cookieString;
-  }
-  /*
-  this.cookieToObj = function (cookieString)
-  {
-  var filedsArray = cookieString.split(":");
-  this.construct (filedsArray[0].split("=")[1],filedsArray[1].split("=")[1],filedsArray[2].split("=")[1],filedsArray[3].split("=")[1],filedsArray[4].split("=")[1],filedsArray[5].split("=")[1],filedsArray[6].split("=")[1]);
-}*/
+    if(productObj.hasOwnProperty("radioType"))
+      this.setRadioType(productObj.radioType);
 
+    if(productObj.hasOwnProperty("selectForm"))
+      this.setSelectForm(productObj.selectForm);
 
-this.cookieToObj = function (productObj)
-{
-  try {
-    this.setCookieFiled1(productObj.cookieFiled1);
-  }
-  catch(err) {
+    if(productObj.hasOwnProperty("checkboxType1"))
+      this.setCheckboxType1(productObj.checkboxType1);
+
+    if(productObj.hasOwnProperty("checkboxType2"))
+      this.setCheckboxType2(productObj.checkboxType2);
 
   }
-
-  try {
-    this.setCookieFiled2(productObj.cookieFiled2);
-  }
-  catch(err) {
-
-  }
-
-  try {
-    this.setDateToValidate(productObj.dateToValidate);
-  }
-  catch(err) {
-
-  }
-
-  try {
-    this.setRadioType(productObj.radioType);
-  }
-  catch(err) {
-
-  }
-
-  try {
-    this.setSelectForm(productObj.selectForm);
-  }
-  catch(err) {
-
-  }
-
-  try {
-    this.setCheckboxType1(productObj.checkboxType1);
-  }
-  catch(err) {
-
-  }
-
-  try {
-    this.setCheckboxType2(productObj.checkboxType2);
-  }
-  catch(err) {
-    // TODO
-  }
-}
 }

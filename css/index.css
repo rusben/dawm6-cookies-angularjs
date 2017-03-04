@@ -6,8 +6,16 @@
 }
 
 .products-table td {
-padding-right: 30px;
-padding-bottom:10px;
+vertical-align: middle;
+}
+
+.label-proven  {
+	padding: 10px;
+}
+
+.proven-badge {
+	background-color: #FFFFFF;
+	color: #337ab7;
 }
 
 .image-logo { width: 60px; height: 60px; }

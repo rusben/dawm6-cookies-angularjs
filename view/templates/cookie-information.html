@@ -1,35 +1,32 @@
 <div class="row">
   <div class="col-md-12">
-    <div ng-if="productsArray.length == 0">
-      <h1>There are no products in your shopping cart.</h1>
-    </div>
+  <h1><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>&nbsp;Products in your shopping cart</h1> 
+    <div ng-show="!productsArray.length" class="alert alert-danger" role="alert">There are no products in your shopping cart.</div>
     <div ng-show="productsArray.length > 0">
+      
       <form name="productsForm">
         <div class="row">
-          <h1>Filter data options:</h1>
-          <div class="col-sm-3">
-            <label for="search">Search by first filed:</label>
+          <div class="col-md-4">
+            <span class="label label-primary">Search by first filed</span>
             <input ng-model="firstFiledSearch" id="search" class="form-control" placeholder="Filter text" ng-disabled="reviewsManagement.$invalid">
           </div>
-          <div class="col-sm-3">
-            <label for="search">Search by second filed:</label>
+          <div class="col-md-4">
+            <span class="label label-primary">Search by second filed</span>
             <input ng-model="secondFiledSearch" id="search" class="form-control" placeholder="Filter text" ng-disabled="reviewsManagement.$invalid">
           </div>
-          <div class="col-sm-2">
-            <label for="search">items per page:</label>
+          <div class="col-md-4">
+            <span class="label label-primary">Items per page</span>
             <input type="number" min="1" max="100" class="form-control" ng-model="pageSize" ng-disabled="reviewsManagement.$invalid">
           </div>
         </div>
-        <div>
-          <h1>Products in your shopping cart:</h1>
-        </div>
-        <table class="products-table">
+        <br/>
+        <table class="table table-striped products-table">
           <tr><th>First Field</th><th>Second Field</th><th>Date</th><th>Option</th><th>Select</th><th>Checkbox 1</th><th>Checkbox 2</th><th>Modify</th><th>Remove</th></tr>
           <!-- <tr dir-paginate="productObj in filteredData | itemsPerPage: pageSize" current-page="currentPage"> -->
           <tr ng-repeat="productObj in productsArray">
             <td>
-              <label ng-show="!editInput[$index]">{{productObj.getCookieFiled1()}}</label>
-              <label ng-show="editInput[$index]"><input type="text" ng-model="productObj.cookieFiled1"/></label>
+              {{ !editInput[$index] ? productObj.getCookieFiled1() : '' }}
+              <input ng-show="editInput[$index]" type="text" ng-model="productObj.cookieFiled1"/>
             </td>
             <td>{{productObj.getCookieFiled2() | currency}}</td>
             <td>{{productObj.getDateToValidate() | date}}</td>
@@ -39,30 +36,42 @@
             <td>{{productObj.getCheckboxType2()}}</td>
             <td>
               <button class="btn"
-              ng-class="{'btn-success': editInput[$index],
-              'btn-primary': !editInput[$index]}"
+              ng-class="{ 'btn-success': editInput[$index],
+                          'btn-default': !editInput[$index]}"
               ng-click="showProductsCtrl.modifyCookie($index)">
 
+              <span class="glyphicon" 
+              ng-class="{ 'glyphicon-pencil': !editInput[$index], 
+                          'glyphicon-save': editInput[$index]}"
+              aria-hidden="true"></span> 
               {{ editInput[$index] ? 'Save' : 'Modify' }}
+
             </button>
           </td>
           <td>
             <button class="btn btn-danger" ng-click="showProductsCtrl.removeCookie($index)">
-              X
+              <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Remove
             </button>
           </td>
         </tr>
       </table>
+
       <div class="text-left" boundary-links="true">
         <dir-pagination-controls boundary-links="true" template-url="../../view/templates/dir-pagination-controls.html" ></dir-pagination-controls>
       </div>
-      <button class="btn btn-warning" ng-click="showProductsCtrl.unDo()">
+
+      
+      <div class="text-left">
+      <button class="btn btn-default pull-right" ng-click="showProductsCtrl.unDo()">
         Undo
       </button>
-      <label>Total products: {{productsArray.length}} </label>
-      <label>Total price: {{totalPrice | currency}}</label>
+
+        <span class="label label-primary label-proven">Total products <span class="badge proven-badge">{{productsArray.length}}</span></span>
+        <span class="label label-primary label-proven">Total price <span class="badge proven-badge">{{totalPrice | currency}}</span></span>
+      </div>
+      
     </form>
   </div>
-
+  </div>
 </div>
-</div>
+<br/>
